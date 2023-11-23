@@ -30,11 +30,21 @@ Route::get('/', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 //  Route::get('/signin', [AuthController::class, 'signin'])->name('login');
-require __DIR__.'/auth.php';
- Route::get('/signin', [AuthController::class, 'signinp'])->name('login');
-Route::post('/signin', [AuthController::class, 'signIn']);
-Route::get('/signup', [AuthController::class, 'signup'])->name('register');
-Route::post('/signup', [AuthController::class, 'register']);
-Route::get('/', [Controller::class, 'index'])->name('welcome');
+// require __DIR__.'/auth.php';
+//  Route::get('/signin', [AuthController::class, 'signinp'])->name('login');
+// Route::post('/signin', [AuthController::class, 'signIn']);
+// Route::get('/signup', [AuthController::class, 'signup'])->name('register');
+// Route::post('/signup', [AuthController::class, 'register']);
+// Route::get('/', [Controller::class, 'index'])->name('welcome');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 
