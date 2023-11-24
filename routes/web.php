@@ -32,14 +32,25 @@ Route::get('/', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 //  Route::get('/signin', [AuthController::class, 'signin'])->name('login');
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
  Route::get('/signin', [AuthController::class, 'signinp'])->name('login');
 Route::post('/signin', [AuthController::class, 'signIn']);
 Route::get('/signup', [AuthController::class, 'signup'])->name('register');
 Route::post('/signup', [AuthController::class, 'register']);
 Route::get('/', [Controller::class, 'index'])->name('welcome');
 Route::get('/verify/{token}', [VerificationController::class, 'verify'])->name('verify');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
 
 
-            // <a href="{{ $tokenLink }}" class="button">Complete Registration</a>
+
+
+// <a href="{{ $tokenLink }}" class="button">Complete Registration</a>
