@@ -35,11 +35,11 @@
 
                     <input type="password" name="password" required>
                     <label>Password</label>
-                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
                 <div class="remember-forgot">
                     <label>
-                        <input type="checkbox">Remember me</label>
+                        <input type="checkbox" >Remember me</label>
                     <a href="#">Forgot password?</a>
                 </div>
                 <button type="submit" class="btn">login</button>
