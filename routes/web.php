@@ -20,6 +20,13 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/',[DashboardController::class,'index']);
+
+Route::get('/homeDisplay', function () {
+    return view('homeDisplay');
+})->name('homeDisplay');
+
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
