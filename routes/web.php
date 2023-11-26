@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\VerificationController;
+
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -37,13 +39,13 @@ Route::get('/homeDisplay', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 //  Route::get('/signin', [AuthController::class, 'signin'])->name('login');
-// require __DIR__.'/auth.php';
-//  Route::get('/signin', [AuthController::class, 'signinp'])->name('login');
-// Route::post('/signin', [AuthController::class, 'signIn']);
-// Route::get('/signup', [AuthController::class, 'signup'])->name('register');
-// Route::post('/signup', [AuthController::class, 'register']);
-// Route::get('/', [Controller::class, 'index'])->name('welcome');
-
+require __DIR__.'/auth.php';
+ Route::get('/signin', [AuthController::class, 'signinp'])->name('login');
+Route::post('/signin', [AuthController::class, 'signIn']);
+Route::get('/signup', [AuthController::class, 'signup'])->name('register');
+Route::post('/signup', [AuthController::class, 'register']);
+Route::get('/', [Controller::class, 'index'])->name('welcome');
+Route::get('/verify/{token}', [VerificationController::class, 'verify'])->name('verify');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -55,3 +57,7 @@ Route::middleware([
 });
 
 
+
+
+
+// <a href="{{ $tokenLink }}" class="button">Complete Registration</a>
