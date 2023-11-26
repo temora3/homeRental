@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\forgotPass;
+use App\Http\Controllers\forgotPassController;
 use App\Http\Controllers\VerificationController;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,27 +22,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// Route::get('/', function () {
+//     return view('index');
 // });
-//  Route::get('/signin', [AuthController::class, 'signin'])->name('login');
-// require __DIR__.'/auth.php';
- Route::get('/signin', [AuthController::class, 'signinp'])->name('login');
+
+
+ Route::get('/signin', [AuthController::class, 'signinpage'])->name('login');
 Route::post('/signin', [AuthController::class, 'signIn']);
 Route::get('/signup', [AuthController::class, 'signup'])->name('register');
 Route::post('/signup', [AuthController::class, 'register']);
-Route::get('/', [Controller::class, 'index'])->name('welcome');
+Route::get('/', [DashboardController::class, 'index'])->name('welcome');
 Route::get('/verify/{token}', [VerificationController::class, 'verify'])->name('verify');
+Route::get('/resetPass',[forgotPass::class,'forgotpasspage'])->name('resetPass');
+Route::post('/resetPass',[forgotPass::class,'replace']);
 
 
 

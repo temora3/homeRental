@@ -68,7 +68,7 @@ class AuthController extends Controller
         $user->email = $request->input('userEmail');
         $user->password = bcrypt($request->input('password'));
         $user->verification_token = $verificationToken;
-        $user->token_expiration_time = now()->addHours(24);
+        $user->token_expiration_time = now()->addHours(2);
         $user->is_verified = false;
         // $user->role = false;
 
@@ -81,12 +81,12 @@ class AuthController extends Controller
                 ->send(new VerificationMail($tokenLink));
 
             // Redirect to a success page or provide feedback to the user
-            return  response()->json(['status' => 'success']);
+            return redirect()->intended(route('login'))->with('success', 'Account created successfully,check your email');
 
 
         } catch (\Exception $e) {
             // Handle email sending failure
-            return response()->json(['error' => 'Registration successful, but the verification email could not be sent.']);
+            return redirect()->intended(route('register'))->with('error', 'failure to create account');
         }
     }
 
@@ -101,7 +101,7 @@ class AuthController extends Controller
         return $token;
     }
 
- public function signinp()
+ public function signinpage()
     {
 
         return view('signin');

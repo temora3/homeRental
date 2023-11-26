@@ -85,7 +85,7 @@
                     <div class="container">
                         <nav class="site-nav">
                             <ul>
-                              <li><a href="" title="Home"><i class="site-nav--icon"></i>
+                              <li><a href="{{route('welcome')}}" title="Home"><i class="site-nav--icon"></i>
 								<script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
 								<lord-icon
 									src="https://cdn.lordicon.com/ajmsjtcp.json"
@@ -106,7 +106,7 @@
 									style="width:40px;height:40px;padding-top:12px;">
 								</lord-icon>
 							  </a></li>
-                              <li><a href="" title="Sign In"><i class="site-nav--icon"></i>
+                              <li><a href="{{route('login')}}" title="Sign In"><i class="site-nav--icon"></i>
 								<script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
 								<lord-icon
 									src="https://cdn.lordicon.com/wzwygmng.json"
@@ -117,7 +117,7 @@
 									style="width:40px;height:40px;padding-top:12px;">
 								</lord-icon>
 							  </a></li>
-                              <li><a href="" title="Sign Up"><i class="site-nav--icon"></i>
+                              <li><a href="{{route('register')}}" title="Sign Up"><i class="site-nav--icon"></i>
 								<script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
 								<lord-icon
 									src="https://cdn.lordicon.com/zrkkrrpl.json"
@@ -128,7 +128,7 @@
 									style="width:40px;height:40px;padding-top:12px;">
 								</lord-icon>
 							  </a></li>
-                              <li><a href=""><i class="site-nav--icon"></i>
+                              <li><a href=""><i class="site-nav--icon" title="account"></i>
                                 <script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
                                 <lord-icon
                                     src="https://cdn.lordicon.com/bgebyztw.json"
