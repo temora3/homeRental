@@ -22,6 +22,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/',[DashboardController::class,'index']);
+
+Route::get('/homeDisplay', function () {
+    return view('homeDisplay');
+})->name('homeDisplay');
+
 
 // Route::get('/', function () {
 //     return view('index');
@@ -39,4 +49,4 @@ Route::post('/resetPass',[forgotPass::class,'replace']);
 
 
 
-            // <a href="{{ $tokenLink }}" class="button">Complete Registration</a>
+// <a href="{{ $tokenLink }}" class="button">Complete Registration</a>

@@ -21,7 +21,7 @@ function toggleMenu() {
 
 var menuToggleElement = document.querySelector('.menu-toggle');
 menuToggleElement.addEventListener('click', toggleMenu);
-;o
+;
 
 let slideIndex = 0;
 showSlides();
@@ -82,5 +82,58 @@ setInterval(() => {
   }
 }, 1000); // 1sec
 
+function initMap(){
+    //Map options
+    var options = {
+        center: {lat: -1.3093 ,lng:36.8125},
+        zoom: 16
+    }
 
+    //New Map
+    map = new google.maps.Map(document.getElementById("map"), options);
 
+    //Marker
+    const marker = new google.maps.Marker({
+        position:{lat: -1.3093 ,lng:36.8125},
+        map:map
+    });
+
+    // var service = new google.maps.places.PlacesService(map);
+
+    // service.nearbySearch({
+    //     location: { lat: -1.3093, lng: 36.8125 },
+    //     radius: 500,
+    //     types: ['']
+    // }, callback);
+
+    // function callback(results, status) {
+    //     if (status === google.maps.places.PlacesServiceStatus.OK) {
+    //         for (var i = 0; i < results.length; i++) {
+    //             getPlacePhotos(results[i].place_id);
+    //         }
+    //     }
+    // }
+
+    // function getPlacePhotos(placeId) {
+    //     var request = {
+    //         placeId: placeId,
+    //         fields: ['photos']
+    //     };
+
+    //     service.getDetails(request, function (place, status) {
+    //         if (status === google.maps.places.PlacesServiceStatus.OK) {
+    //             if (place.photos && place.photos.length > 0) {
+    //                 var photoUrl = place.photos[0].getUrl({ maxWidth: 200, maxHeight: 150 });
+    //                 displayPhoto(photoUrl);
+    //             }
+    //         }
+    //     });
+    // }
+
+    // function displayPhoto(photoUrl) {
+    //     var photoElement = document.createElement('img');
+    //     photoElement.src = photoUrl;
+    //     photoElement.className = 'photo';
+    //     document.getElementById('photos').appendChild(photoElement);
+    // }
+}

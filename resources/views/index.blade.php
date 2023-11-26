@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css?family=Monoton:regular" rel="stylesheet" />
 
 	<link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 	<script src="{{ asset('js/gsap/gsap.min.js') }}" defer></script>
 	<script src="{{ asset('js/gsap/ScrollTrigger.min.js') }}" defer></script>
@@ -27,65 +26,13 @@
 
 	<div class="wrapper">
 		<div class="content">
-            <article class="main-article" style="background-image: url('{{ asset('img/orangeCurve.jpg') }}');">
-                <div class="recommendationText">Want some home recommendations?<br>
-                    <span class="subText">Here are some of our best ones</span>
-                </div>
-				<div class="cardContainer">
-					<!-- Full-width images with number and caption text -->
-                    <div class="carousel-container">
-                        <div class="mySlides animate">
-                        <img src="https://wallpapershome.com/images/pages/pic_h/16239.jpg" alt="slide" />
-                        <div class="number">1 / 5</div>
-                        <div id ="text" class="text">Lorem ipsum dolor sit amet consectetur</div>
-                        </div>
-
-                        <div class="mySlides animate">
-                        <img src="https://wallpapershome.com/images/pages/pic_h/23525.jpg" alt="slide" />
-                        <div class="number">2 / 5</div>
-                        <div id ="text" class="text">amet consectetur</div>
-                        </div>
-
-                        <div class="mySlides animate">
-                        <img src="https://wallpapershome.com/images/pages/pic_h/23277.jpg" alt="slide" />
-                        <div class="number">3 / 5</div>
-                        <div id ="text" class="text">Lorem ipsum dolor sit</div>
-                        </div>
-
-                        <div class="mySlides animate">
-                        <img src="https://wallpapershome.com/images/pages/pic_h/12596.jpg" alt="slide" />
-                        <div class="number">4 / 5</div>
-                        <div id ="text" class="text">Doloribus quo alias reprehenderit</div>
-                        </div>
-
-                        <div class="mySlides animate">
-                        <img src="https://wallpapershome.com/images/pages/pic_h/23419.jpg" alt="slide" />
-                        <div class="number">5 / 5</div>
-                        <div id ="text" class="text">Reprehenderit</div>
-                        </div>
-
-                        <!-- Next and previous buttons -->
-                        <a class="prev" onclick="prevSlide()">&#10094;</a>
-                        <a class="next" onclick="nextSlide()">&#10095;</a>
-
-                        <!-- The dots/circles -->
-                        <div class="dots-container">
-                        <span class="dots" onclick="currentSlide(1)"></span>
-                        <span class="dots" onclick="currentSlide(2)"></span>
-                        <span class="dots" onclick="currentSlide(3)"></span>
-                        <span class="dots" onclick="currentSlide(4)"></span>
-                        <span class="dots" onclick="currentSlide(5)"></span>
-                        </div>
-                    </div>
-				</div>
-			</article>
-			<header class="main-header">
+            <header class="main-header">
 				<div class="layers">
                     <header class="headerStyle">
                     <div class="container">
                         <nav class="site-nav">
                             <ul>
-                              <li><a href="{{route('welcome')}}" title="Home"><i class="site-nav--icon"></i>
+                              <li><a href="{{route('homeDisplay')}}" title="Home"><i class="site-nav--icon"></i>
 								<script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
 								<lord-icon
 									src="https://cdn.lordicon.com/ajmsjtcp.json"
@@ -175,33 +122,113 @@
 					<!-- Full-width images with number and caption text -->
                     <div class="carousel-container">
                         <div class="mySlides animate">
-                        <img src="https://wallpapershome.com/images/pages/pic_h/16239.jpg" alt="slide" />
+                        <img src="https://wallpapershome.com/images/pages/pic_h/23525.jpg" alt="slide" />
                         <div class="number">1 / 5</div>
-                        <div id ="text" class="text">Lorem ipsum dolor sit amet consectetur</div>
+                        <div id ="text" class="text">Lorem ipsum dolor sit amet consectetur
+                            <div class="socialLinks">
+                                <div style="display: flex; gap: 1em;">
+                                    <button class="BtnSocial" style="color:aqua);">
+                                        <a href="https://github.com/temora3" class="signSocial"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/surcxhka.json"
+                                                trigger="hover"
+                                                colors="primary:#e8308c,secondary:#000000"
+                                                style="width:30px;height:30px">
+                                            </lord-icon>
+                                        </a>
+                                        <a href="https://github.com/temora3" class="btnText">Visit</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         </div>
 
                         <div class="mySlides animate">
                         <img src="https://wallpapershome.com/images/pages/pic_h/23525.jpg" alt="slide" />
                         <div class="number">2 / 5</div>
-                        <div id ="text" class="text">amet consectetur</div>
+                        <div id ="text" class="text">amet consectetur
+                            <div class="socialLinks">
+                                <div style="display: flex; gap: 1em;">
+                                    <button class="BtnSocial" style="color:aqua);">
+                                        <a href="https://github.com/temora3" class="signSocial"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/surcxhka.json"
+                                                trigger="hover"
+                                                colors="primary:#e8308c,secondary:#000000"
+                                                style="width:30px;height:30px">
+                                            </lord-icon>
+                                        </a>
+                                        <a href="https://github.com/temora3" class="btnText">Visit</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         </div>
 
                         <div class="mySlides animate">
                         <img src="https://wallpapershome.com/images/pages/pic_h/23277.jpg" alt="slide" />
                         <div class="number">3 / 5</div>
-                        <div id ="text" class="text">Lorem ipsum dolor sit</div>
+                        <div id ="text" class="text">Lorem ipsum dolor sit
+                            <div class="socialLinks">
+                                <div style="display: flex; gap: 1em;">
+                                    <button class="BtnSocial" style="color:aqua);">
+                                        <a href="https://github.com/temora3" class="signSocial"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/surcxhka.json"
+                                                trigger="hover"
+                                                colors="primary:#e8308c,secondary:#000000"
+                                                style="width:30px;height:30px">
+                                            </lord-icon>
+                                        </a>
+                                        <a href="https://github.com/temora3" class="btnText">Visit</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         </div>
 
                         <div class="mySlides animate">
                         <img src="https://wallpapershome.com/images/pages/pic_h/12596.jpg" alt="slide" />
                         <div class="number">4 / 5</div>
-                        <div id ="text" class="text">Doloribus quo alias reprehenderit</div>
+                        <div id ="text" class="text">Doloribus quo alias reprehenderit
+                            <div class="socialLinks">
+                                <div style="display: flex; gap: 1em;">
+                                    <button class="BtnSocial" style="color:aqua);">
+                                        <a href="https://github.com/temora3" class="signSocial"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/surcxhka.json"
+                                                trigger="hover"
+                                                colors="primary:#e8308c,secondary:#000000"
+                                                style="width:30px;height:30px">
+                                            </lord-icon>
+                                        </a>
+                                        <a href="https://github.com/temora3" class="btnText">Visit</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         </div>
 
                         <div class="mySlides animate">
                         <img src="https://wallpapershome.com/images/pages/pic_h/23419.jpg" alt="slide" />
                         <div class="number">5 / 5</div>
-                        <div id ="text" class="text">Reprehenderit</div>
+                        <div id ="text" class="text">Reprehenderit
+                            <div class="socialLinks">
+                                <div style="display: flex; gap: 1em;">
+                                    <button class="BtnSocial" style="color:aqua);">
+                                        <a href="https://github.com/temora3" class="signSocial"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/surcxhka.json"
+                                                trigger="hover"
+                                                colors="primary:#e8308c,secondary:#000000"
+                                                style="width:30px;height:30px">
+                                            </lord-icon>
+                                        </a>
+                                        <a href="https://github.com/temora3" class="btnText">Visit</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                         </div>
 
                         <!-- Next and previous buttons -->
@@ -218,6 +245,13 @@
                         </div>
                     </div>
 				</div>
+			</article>
+            <article class="main-article" style="background-color: rgb(255, 255, 255);">
+                <div class="textSt">
+                    @foreach ($properties as $properties)
+                        {{ $properties->title}}<br>
+                    @endforeach
+                </div>
 			</article>
             <div class="copyright">© Copyright Infinity Developers</div>
 		</div>
