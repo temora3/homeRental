@@ -46,6 +46,9 @@ Route::get('/', [DashboardController::class, 'index'])->name('welcome');
 Route::get('/verify/{token}', [VerificationController::class, 'verify'])->name('verify');
 Route::get('/resetPass',[forgotPass::class,'forgotpasspage'])->name('resetPass');
 Route::post('/resetPass',[forgotPass::class,'replace']);
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])->name('update.profile');
+Route::post('/logout', [App\Http\Controllers\Auth\LogoutController::class, 'destroy'])->name('logout');
 
 
 
