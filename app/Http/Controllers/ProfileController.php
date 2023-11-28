@@ -11,31 +11,59 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): View
+    public function index()
+{
+    return view('profile.home');
+}
+public function edit()
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
-        ]);
+        return view('profile.edit');
     }
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function updateProfile(Request $request)
     {
-        $request->user()->fill($request->validated());
+        // Validation rules, adjust as needed
+        $rules = [
+            'email' => 'required|email',
+            'firstname' => 'required|string',
+            'lastname' => 'required|string',
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+            // Add more validation rules for other fields
+        ];
+
+        // Validate the request
+        $request->validate($rules);
+         // If the profile image is present, add it to the rules
+    if ($request->hasFile('profile_image')) {
+        $rules['profile_image'] = 'image|mimes:jpeg,png,jpg,gif|max:2048';
+    }
+
+    
+
+        // Update user profile
+        $user = auth()->user();
+        $user->email = $request->input('email');
+        $user->firstname = $request->input('firstname');
+        $user->lastname = $request->input('lastname');
+        // Add more fields as needed
+
+        // Handle profile image upload
+        if ($request->hasFile('profile_image')) {
+            $image = $request->file('profile_image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('profile_images'), $imageName);
+            $user->profile_image = $imageName;
         }
 
-        $request->user()->save();
+        // Save changes
+        $user->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        // Return success response
+        session()->flash('success','Update was successful');
+        return redirect(route('profile'));
+        //return response()->json(['success' => true]);
     }
+    
 
     /**
      * Delete the user's account.

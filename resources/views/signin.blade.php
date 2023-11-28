@@ -40,7 +40,7 @@
                 <div class="remember-forgot">
                     <label>
                         <input type="checkbox" >Remember me</label>
-                    <a href="#">Forgot password?</a>
+                    <a href="{{route ('resetPass')}}">Forgot password?</a>
                 </div>
                 <button type="submit" class="btn">login</button>
                 <div class="login-register">
