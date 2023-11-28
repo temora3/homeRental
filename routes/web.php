@@ -1,16 +1,8 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\forgotPass;
-use App\Http\Controllers\forgotPassController;
-use App\Http\Controllers\VerificationController;
-
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\searchController;
+// use App\Http\Controllers\availableController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,34 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
+*/ 
 
-Route::get('/',[DashboardController::class,'index']);
-
-Route::get('/homeDisplay', function () {
-    return view('homeDisplay');
-})->name('homeDisplay');
-
-
-// Route::get('/', function () {
-//     return view('index');
-// });
-
-
- Route::get('/signin', [AuthController::class, 'signinpage'])->name('login');
-Route::post('/signin', [AuthController::class, 'signIn']);
-Route::get('/signup', [AuthController::class, 'signup'])->name('register');
-Route::post('/signup', [AuthController::class, 'register']);
-Route::get('/', [DashboardController::class, 'index'])->name('welcome');
-Route::get('/verify/{token}', [VerificationController::class, 'verify'])->name('verify');
-Route::get('/resetPass',[forgotPass::class,'forgotpasspage'])->name('resetPass');
-Route::post('/resetPass',[forgotPass::class,'replace']);
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
-Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])->name('update.profile');
-Route::post('/logout', [App\Http\Controllers\Auth\LogoutController::class, 'destroy'])->name('logout');
-
-
-
-// <a href="{{ $tokenLink }}" class="button">Complete Registration</a>
+Route::get('/',[searchController::class ,'index'])->name('search');
+Route::post('/',[searchController::class ,'search']);
+// Route::get('/',[availableController::class ,'available'])->name('available');
