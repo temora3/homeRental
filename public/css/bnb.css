@@ -1,0 +1,25 @@
+/* 
+
+CSS FOR THE AIRBNB PAGE
+
+*/
+/* TITLE  */
+.header{
+    margin-left: 300px;
+    font-size: 36px;
+  }
+  /* PARAGRAPH */
+.content{
+    font-size: 18px;
+    padding: 19px 0;
+    color: #666;
+    font-family: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .bg-img-1 {
+    background: url("../images/bg-img-01.jpg") center center/cover no-repeat;
+  }
