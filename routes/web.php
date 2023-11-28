@@ -22,4 +22,4 @@ Route::get('/', function () {
 
 Route::get('/',[searchController::class ,'index'])->name('search');
 Route::post('/',[searchController::class ,'search']);
-// Route::get('/',[availableController::class ,'available'])->name('available');
+
